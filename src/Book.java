@@ -1,12 +1,12 @@
 public class Book {
     private String title;   //название книги
-    private Author name;    //имя автора
+    private Author authorName;    //имя автора
     private int year;       //год публикации книги
 
     //конструктор класса Book
     public Book (String title, Author name, int year){
         this.title = title;
-        this.name = name;
+        this.authorName = name;
         this.year = year;
     }
 
@@ -16,8 +16,8 @@ public class Book {
     }
 
     //геттер для параметра имени автора
-    public Author getName(){
-        return this.name;
+    public Author getAuthorName(){
+        return this.authorName;
     }
 
     //геттер для параметра года публикации книги
@@ -33,23 +33,22 @@ public class Book {
     //переопределенный метод toString для класса Book
     @Override
     public String toString(){
-        return "Название книги: " + title + name.toString() + ". Год написания: " + year + ".";
+        return "Название книги: " + title + authorName.toString() + ". Год написания: " + year + ".";
     }
 
     //переопределенный метод equals для класса Book
     @Override
     public boolean equals(Object other){
-        if (this.getClass() != other.getClass()){
-            return false;
-        }
+        if (this == other) return true;
+        if ((this.getClass() != other.getClass()) || other == null) return false;
         Book book = (Book) other;
-        return (title.equals(book.title)) && (name.equals(book.name) && (year == book.getYear()));
+        return (title.equals(book.title)) && (authorName.equals(book.authorName) && (year == book.getYear()));
     }
 
     //переопределенный метод hashCode для класса Book
     @Override
     public int hashCode(){
-        return java.util.Objects.hash(title, name, year);
+        return java.util.Objects.hash(title, authorName, year);
     }
 
 }

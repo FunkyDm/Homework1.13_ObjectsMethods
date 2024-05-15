@@ -27,9 +27,8 @@ public class Author {
     //переопределенный метод equals для класса Author
     @Override
     public boolean equals(Object other){
-        if (this.getClass() != other.getClass()){
-            return false;
-        }
+        if (this == other) return true;
+        if (this.getClass() != other.getClass() || other == null) return false;
         Author author = (Author) other;
         return (authorName.equals(author.authorName)) && (authorSurname.equals(author.authorSurname));
     }
