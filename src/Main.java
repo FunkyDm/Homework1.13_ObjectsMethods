@@ -24,10 +24,3 @@ public class Main {
 
     }
 }
-
-//Реализуйте метод
-//hashCode
-// в классах
-//Author
-// и
-//Book.
